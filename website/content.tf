@@ -44,6 +44,12 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   price_class         = "PriceClass_100"
   aliases             = ["chop-chop.keanrawr.com"]
 
+  custom_error_response {
+    error_code         = 403
+    response_code      = 404
+    response_page_path = "/error.html"
+  }
+
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD"]
     cached_methods   = ["GET", "HEAD"]
