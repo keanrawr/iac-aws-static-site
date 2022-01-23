@@ -1,0 +1,34 @@
+name: Build and Deploy to Google Compute Engine
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test-job:
+    name: Dummy template for an action
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: First Step
+        run: echo "This is the first step"
+      
+      - name: Second Step
+        env:
+          ENV_VAR: environment_variable_value
+        run: |
+          echo "This is the second step"
+          echo "Echoing evironment variable ENV_VAR..."
+          echo $ENV_VAR
+      
+      - name: Third Step
+        env:
+          ENV_VAR: new_environment_variable_value
+        run: |
+          echo "This is the third step"
+          echo "Echoing evironment variable ENV_VAR again..."
+          echo $ENV_VAR

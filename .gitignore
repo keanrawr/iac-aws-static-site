@@ -1,0 +1,21 @@
+# terraform ignores
+**/.terraform/*
+
+*.tfstate
+*.tfstate.*
+
+crash.log
+
+# variable files tend to be ommited in case there're secrets in there
+# *.tfvars
+
+# ignore terraform plans, depends on use case
+*.plan
+
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+.terraformrc
+terraform.rc
